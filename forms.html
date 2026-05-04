@@ -8,26 +8,26 @@
     <body>
         <nav>
             <ul>
-                <li><a rel="stylesheet" href ="index.html">home</a></li>
-                <li><a rel="stylesheet" href="Projekt.html">projekt</a></li>
-                <li><a rel="stylesheet" href= "tabell.html">tabell</a></li>
-                <li><a rel="stylesheet" href= "forms.html">forms</a></li>
+                <li><a href= "index.html">home</a></li>
+                <li><a href= "Projekt.html">projekt</a></li>
+                <li><a href= "tabell.html">tabell</a></li>
+                <li><a href= "forms.html">forms</a></li>
             </ul>
         </nav>
-        <div class = "form">
-            <form action>
-                <legend>Kontakta mig</legend>
-                <label for = "name">Namn:</label>
-                <input type = "text" id = "name" name = "name"><br>
-                <label for="email">E-post:</label>
-                <input type="email" id="email" name="email"><br>
-                <label for = "subject">Ämne:</label>
-                <input type = "text" id = "subject" name = "subject"><br>
-                <label for = "message">Meddelande:</label>
-                <textarea id = "message" name = "message"></textarea><br>
-                <button type = "submit" class = "submit">Skicka</button>
-
+            <form action="">
+                <fieldset>
+                    <legend>Kontakta mig</legend>
+                    <label for = "name">Namn:</label>
+                    <input type = "text" id = "name" name = "Namn"><br>
+                    <label for="email">E-post:</label>
+                    <input type="email"  id = "email" name = "E-post" ><br>
+                    <label for = "subject"> Ämne:</label>
+                    <input type = "text" id = "subject" name = "Ämne"><br>
+                    <label for = "message">Meddelande:</label>
+                    <textarea id = "message" name = "Meddelande" required></textarea><br>
+                    <button type = "submit" class = "submit">Skicka</button>
+                </fieldset>
             </form>
-        </div>    
+           
     </body>
 </html>
