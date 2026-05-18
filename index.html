@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" href="Projekt.css">
     <title>Slutprojekt</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
 </head>
 <body>
     <nav>
@@ -21,29 +24,43 @@
             <h1>rekommenderad spel</h1>
         </header>
         <main>
-        <h2>League of Legends</h2>
-        <img src = "https://cdn1.epicgames.com/offer/24b9b5e323bc40eea252a10cdd3b2f10/EGS_LeagueofLegends_RiotGames_S1_2560x1440-47eb328eac5ddd63ebd096ded7d0d5ab" alt="Bild">
-        <p>League of Legends är ett populärt taktiskt stridsspel där spelare styr hjältar i team-baserade strider.</p>
-        <h2>Don't Starve Together</h2>
-        <img src = "https://image.api.playstation.com/vulcan/ap/rnd/202505/2800/3a0ae623649be7f3ebb24b63db6c98f3b71ecc9075579372.png" alt="en bild på spelet Don't Starve Together">
-        <p>Don't Starve Together är ett överlevnadsspel där spelare måste överleva i en värld full av faror och resurser.</p>
-        <h2>We were here together</h2>
-        <img src = "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/865360/header.jpg?t=1764330773" alt="Bild">
-        <p>We were here together är ett pussel spel som kräver samarbete mellan spelarna för att lösa gåtor.</p>
-
+            <div class="game-card">
+                <div class="image-wrapper">
+                    <img src="https://cdn1.epicgames.com/offer/24b9b5e323bc40eea252a10cdd3b2f10/EGS_LeagueofLegends_RiotGames_S1_2560x1440-47eb328eac5ddd63ebd096ded7d0d5ab" alt="League of Legends">
+                    <h2>League of Legends</h2>
+                </div>
+                <p>League of Legends är ett populärt taktiskt stridsspel där spelare styr hjältar i team-baserade strider.</p>
+            </div>
+            <div class="game-card">
+                <div class="image-wrapper">
+                    <img src="https://image.api.playstation.com/vulcan/ap/rnd/202505/2800/3a0ae623649be7f3ebb24b63db6c98f3b71ecc9075579372.png" alt="Don't Starve Together">
+                    <h2>Don't Starve Together</h2>
+                </div>
+                <p>Don't Starve Together är ett överlevnadsspel där spelare måste överleva i en värld full av faror och resurser.</p>
+            </div>
+            <div class="game-card">
+                <div class="image-wrapper">
+                    <img src="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/865360/header.jpg?t=1764330773" alt="We Were Here Together">
+                    <h2>We Were Here Together</h2>
+                </div>
+                <p>We Were Here Together är ett pussel spel som kräver samarbete mellan spelarna för att lösa gåtor.</p>
+            </div>
         </main>
         
-       <footer>
-        <h3>Välj ett spel</h3>
-        <form action>
-        <select name = "spel">
-            <option value="lol">League of Legends</option>
+       
+        
+        <form>
+            <h3>Välj ett spel</h3>
+        <select name="spel" id="spel">
+            <option value="league">League of Legends</option>
             <option value="dst">Don't Starve Together</option>
             <option value="wwht">We were here together</option>
         </select>
         <input type="submit" value="Skicka">
         </form>
-         </footer>
+        <footer>
+            <p>2023 Spelrekommendationer. Alla rättigheter förbehållna.</p>
+        </footer>
     </div>   
 
 </body>
