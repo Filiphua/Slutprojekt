@@ -1,13 +1,13 @@
 html body {
-    font-family: Arial, fantasy, sans-serif;
+    font-family: 'Roboto', sans-serif;
     margin: 0;
     padding: 0;
     height: 100%;
     width: 100%;
 }
-body
-{
-    background-color: linear-gradient(to right, #ff0000, #0000ff);
+body {
+    background: linear-gradient(to right, #ff0000, #0000ff);
+
 }
 nav {
     background-color: #da1a1a;
@@ -30,51 +30,151 @@ nav ul li a {
 }
 .rekomendation {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-template-rows: 100px 1fr 1fr 100px;
+    min-height: 100vh;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: auto auto auto auto auto auto;
     grid-template-areas: "header header header header"
                          "main main main main"
                          "main main main main"
+                         "main main main main"
+                         "form form form form"
                          "footer footer footer footer";
 }
+.rekomendation header {
+    grid-area: header;
+    text-align: center;
+}
+.rekomendation main {
+    grid-area: main;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 10px;
+    justify-content: center;
+    align-items: start;
+}
+.rekomendation form {
+    grid-area: form;
+}
+.rekomendation h3 {
+    grid-column: 1 / -1;
+    text-align: center;
+    margin-top: 20px;
+}
+.rekomendation .game-card {
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+    max-width: 260px;
+    margin: 0 auto;
+}
+.rekomendation .image-wrapper {
+    position: relative;
+}
+.rekomendation .image-wrapper img {
+    width: 100%;
+    display: block;
+    height: 150px;
+    object-fit: cover;
+}
+.rekomendation .image-wrapper h2 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    margin: 0;
+    padding: 14px 16px;
+    background: rgba(0, 0, 0, 0.55);
+    color: #ffffff;
+    font-size: 1.25rem;
+}
+.rekomendation .game-card p {
+    font-size: 1.1em;
+    padding: 16px;
+    margin: 0;
+}
+.rekomendation footer {
+    grid-area: footer;
+    text-align: center;
+    padding: 5px;
+    background-color: #da1a1a;
+    color: white;
+}
+.spel1 {
+    grid-area: main;
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+}
+.spel2 {
+    grid-area: main;
+    grid-column: 1 / 2;
+    grid-row: 2 / 3;
+}
+.spel3 {
+    grid-area: main;
+    grid-column: 1 / 2;
+    grid-row: 3 / 4;
+}
+
 
 .hemsida {
     display: grid;
+    min-height: 100vh;
     grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-template-rows: 100px 1fr 1fr 100px;
-    grid-template-areas: "header header header header"
-                         "main main main main"
-                         "main main main main"
-                         "footer footer footer footer";
+    grid-template-rows: auto 1fr auto;
+
+    grid-template-areas: 
+    "header header header header"
+    "main main main main"
+    "footer footer footer footer";
 }
-.hemsida h1 {
+header {
     grid-area: header;
     grid-row: 1 / 2;
-    grid-column: 2 / 4;
+    grid-column: 1 / 5;
+    text-align: center;
 }
-.hemsida img {
+.hemsida main {
     grid-area: main;
-    grid-row: 2 / 3;
-    grid-column: 4 / 5;
+    grid-row: 2 / 4;
+    grid-column: 1 / 5;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(250px, 1fr);
+    gap: 20px;
+    align-items: start;
 }
-img {
+footer {
+    grid-area: footer;
+    grid-row: 4 / 5;
+    grid-column: 1 / 5;
+    text-align: center;
+    padding: 5px;
+    background-color: #da1a1a;
+    color: white;
+}
+ 
+.hemsida main img  {
+    grid-column: 2 / 3;
+    justify-self: center;
     width: 100%;
-    height: 10cm;
+    max-width: 320px;
+    height: auto;
 }
-p {
-    grid-area: main;
-    grid-row: 3 /4;
-    grid-column: 4 / 5;
+.hemsida main p.text {
+    grid-column: 1 / 2;
     font-size: 1.2em;
+    
 }
-.text{
-    grid-area: main;
-    grid-row: 2 /4;
-    grid-column: 1 / 4;
+.hemsida main img + p {
+    grid-column: 2 / 3;
+    grid-row: 2;
+    align-self: start;
+    margin-top: 0;
+    font-size: 1.2em;
 }
 h1 {
     text-align: center;
-    font-size: 15px;
+    font-size: 2.5rem;
 }
 
 dd
@@ -86,22 +186,27 @@ dd
 }
 form {
     border: 1px solid #111;
-    padding: 20px;
+    padding: 16px;
+    max-width: 600px;
+    margin: 20px auto;
+    background-color: rgba(255,255,255,0.9);        
 }
-.submit {
-    
+form button {
     background-color: #007bff;
     color: white;
 }
 
 label {
+    display: block;
+    margin-bottom: 8px;
     background-color: rgba(101, 95, 95, 0.671);
     padding: 5px;
 }
 input, textarea
 {
     width: 100%;
-    padding: 5px;
+    padding: 8px;
+    box-sizing: border-box;
 }
 
 fieldset {
@@ -111,27 +216,46 @@ fieldset {
 }
 button  
 {
-    border: 1px solid white;
+    border: 1px solid rgb(0,0,0);
     border-radius: 10px;
     padding: 10px 15px;
     
 }
 .tabell {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
-    grid-template-areas: "nav nav nav nav nav"
-                         "main main main main main"
-                         "main main main main main"
-                         "main main main main main"
-                         "footer footer footer footer footer";
+    min-height: 100vh;
+    gap: 100px;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: auto 1fr auto;
+    grid-template-areas: "header header header"
+                         "main main main"
+                         "footer footer footer";
 }
-table {
+
+.tabell header {
+    grid-area: header;
+}
+.tabell main {
     grid-area: main;
-    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+.tabell main table {
+    grid-column: 2 / 3;
+
+}
+.tabell footer {
+    grid-area: footer;
+    text-align: center;
+    padding: 5px;
+    background-color: #da1a1a;
+    color: white;
+}
+
+
+table, th, td {
     border-collapse: collapse;
-    grid-column: 3 / 4;
-    grid-row: 2 / 5;
+    border: 1px solid black;
 }
 tr:nth-child(even) {
     background-color: rgb(40, 150, 200);
@@ -155,4 +279,3 @@ a:active {
     color: rgb(0,255,0);
 }
 
-          
